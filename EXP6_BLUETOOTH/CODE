@@ -1,0 +1,35 @@
+char data = 0;
+
+void setup()
+
+{
+
+pinMode(13,OUTPUT);
+
+Serial.begin(9600);
+
+}
+
+void loop()
+
+{
+
+if(Serial.available()&gt;0)
+
+{
+
+data=Serial.read();
+
+if(data==&#39;1&#39;)
+
+{
+
+digitalWrite(13,HIGH);
+
+}
+
+else if(data==&#39;0&#39;)
+
+{
+
+digitalWrite(13,LOW);}}}
