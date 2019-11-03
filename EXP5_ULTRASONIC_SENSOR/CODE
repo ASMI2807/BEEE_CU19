@@ -1,0 +1,56 @@
+Dvoid setup()
+
+{
+
+pinMode(10, OUTPUT);
+
+pinMode(9,INPUT);
+
+pinMode(6,OUTPUT);
+
+Serial.begin(9600);
+
+}
+
+void loop()
+
+{
+
+float d,t;
+
+digitalWrite(10,HIGH);
+
+delayMicroseconds(10);
+
+digitalWrite(10,LOW);
+
+t=pulseIn(9,HIGH);
+
+d=0.017*t;
+
+Serial.print(&quot;Distance&quot;);
+
+Serial.print(d);
+
+if(d&lt;20)
+
+{
+
+for(int i=0;i&lt;256;i++)
+
+{
+
+analogWrite(6,i);
+
+delay(10);
+
+}
+
+}
+
+else if(d&gt;20)
+
+{
+
+analogWrite(6,0);
+))
